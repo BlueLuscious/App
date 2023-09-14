@@ -1,1 +1,130 @@
-sign up
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}" type="text/css"/>
+    <script src="{% static 'JS/form.js' %}"></script>
+</head>
+
+<body>
+    {% block content %}
+    <h1>Register</h1>
+    <form method="post" enctype="multipart/form-data" id="form">
+        {% csrf_token %}
+        <!-- Step 1 -->
+        <div class="step" id="step1">
+            <h2>Personal Data</h2>
+            <table>
+                <tr>
+                    <td><label for="id_first_name">First Name:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.first_name }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_last_name">Last Name:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.last_name }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_cuit">Cuit:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.cuit }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_phone_number">Phone Number:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.phone_number }} </td>
+                </tr>
+                <tr>
+                    <td><button id="next1">Next Step</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+            <h2>Account Data</h2>
+            <table>
+                <tr>
+                    <td><label for="id_email">Email:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.email }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_username">Username:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.username }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_password">Password:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.password }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_repeat_password">Repeat Password:</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.repeat_password }} </td>
+                </tr>
+                <tr>
+                    <td><button id="prev2">Previous Step</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="next2">Next Step</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <h2>Interest Data</h2>
+            <table>
+                <tr>
+                    <td><label for="id_work_line">Work Line</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.work_line }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_interest_line">Interest Line</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.interest_line }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_is_seller">Seller?</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.is_seller }} </td>
+                </tr>
+                <tr>
+                    <td><label for="id_is_buyer">Buyer?</label></td>
+                </tr>
+                <tr>
+                    <td> {{ form.is_buyer }} </td>
+                </tr>
+                <tr>
+                    <td><button id="prev3">Previous Step</button></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Sign Up</button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    {% endblock %}
+    <script src="form.js"></script>
+</body>
+
+</html>
