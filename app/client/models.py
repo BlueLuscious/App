@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 class BusinessLineChoices(models.TextChoices):
     JEWELER = "Jeweler"
-    BEATMAKER = "Beatmaker"
+    BEATMAKER = "Beat maker"
     OTHERS = "Others"
 
 class ClientModel(AbstractUser):
