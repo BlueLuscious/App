@@ -16,7 +16,7 @@ class ClientModel(AbstractUser):
     city  = models.CharField(max_length=128)
     postal_code = models.CharField(max_length=4)
     phone_number = models.CharField(max_length=64)
-    avatar = models.ImageField(upload_to="avatar/", blank=True)
+    avatar = models.ImageField(upload_to="avatar/", default=None, blank=True)
     
     def __str__(self) -> str:
         return f"First name: {self.first_name}, Last name: {self.last_name}"
