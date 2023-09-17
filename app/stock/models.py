@@ -7,10 +7,10 @@ class StockModel(models.Model):
     name = models.CharField(max_length=128)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     quantity = models.FloatField(max_length=128, default=1)
-    image = models.ImageField(upload_to="products/", default=None, blank=True)
+    image = models.ImageField(upload_to="products", default=None, null=True, blank=True)
     description = models.TextField(max_length=256)
     code = models.CharField(max_length=12, unique=True)
-    expiration = models.DateTimeField(null = True, default=None)    
+    expiration = models.DateTimeField(null=True, default=None)    
 
     class Meta:
         unique_together = ("seller", "code")
