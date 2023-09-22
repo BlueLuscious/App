@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+/*     display: flex;
+    justify-content: center; */
+
+}
+
+.display {
+    padding: 20px;
+    position: absolute;
+    /* text-align: center; */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+button {
+    padding: 10px;
+    width: 395px;
+    border-radius: 10px;
+}
+
+input {
+    padding: 7.5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
