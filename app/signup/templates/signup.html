@@ -6,11 +6,11 @@
 </head>
 <body>
     {% block content %}
-    <h1>Register</h1>
     <form method="post" enctype="multipart/form-data" id="form">
         {% csrf_token %}
         <!-- Step 1 -->
         <div class="step" id="step1">
+            <h1>Register</h1>
             <h2>Personal Data</h2>
             <table>
                 <tr>
