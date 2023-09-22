@@ -1,9 +1,23 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.views import View
 from django.template import loader
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
-class LogInView(LoginRequiredMixin, View):
+class LogInView(View):
     def get(self, request):
-        template = loader.get_template('home.html')
+        template = loader.get_template('registration/login.html')
         return HttpResponse(template.render(None, request))
+    
+    def post(self, request):
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/home/')
+        else:
+            messages.error(request, "Invalid username or password")
+            template = loader.get_template('registration/login.html')
+            return HttpResponse(template.render(None, request))
