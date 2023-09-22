@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views import View
 from django.template import loader
-from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
 class LogInView(View):
@@ -18,6 +17,4 @@ class LogInView(View):
             login(request, user)
             return redirect('/home/')
         else:
-            messages.error(request, "Invalid username or password")
-            template = loader.get_template('registration/login.html')
-            return HttpResponse(template.render(None, request))
+            return redirect('/login/')
