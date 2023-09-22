@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.views import View
 from django.template import loader
 from client.models import ClientModel
@@ -28,6 +29,6 @@ class SignUpView(View):
         }
 
         ClientModel.objects.create_user(**data)
-        template = loader.get_template("login.html")
-        return HttpResponse(template.render(data, request))
-
+        #template = loader.get_template("login.html")
+        #return HttpResponse(template.render(data, request))
+        return redirect('/login/')
