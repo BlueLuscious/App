@@ -1,1 +1,8 @@
-home
+{% block content %}
+  {{ stock.name }}
+  {% for s in stock %}
+    {{ s.name }} ---- {{ s.seller.username }}
+    ${{ s.price }}
+    <br>
+  {% endfor %}
+{% endblock content %}
