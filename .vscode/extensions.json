@@ -3,8 +3,10 @@
         "rebornix.ruby",
         "codezombiech.gitignore",
         "wallabyjs.quokka-vscode",
-        "rangav.vscode-thunder-client",
         "esbenp.prettier-vscode",
-        "dotjoshjohnson.xml"
+        "dotjoshjohnson.xml",
+        "github.copilot",
+        "njpwerner.autodocstring",
+        "sidthesloth.html5-boilerplate"
     ]
 }
