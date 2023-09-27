@@ -1,41 +1,42 @@
+{% extends "base.html" %}
 {% load static %}
+{% block content %}
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{% static 'CSS/signupStyles.css' %}" type="text/css"/>
     <script src="{% static 'JS/signupScript.js' %}"></script>
 </head>
 <body>
-    {% block content %}
+
     <form method="post" enctype="multipart/form-data" id="form">
         {% csrf_token %}
         <!-- Step 1 -->
         <div class="step" id="step1">
-            <h1>Register</h1>
-            <h2>Personal Data</h2>
+            <h1 class="title">Personal Data</h1>
             <table>
-                <tr>
-                    <td><label for="id_first_name">First Name:</label></td>
-                </tr>
                 <tr>
                     <td> {{ form.first_name }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_last_name">Last Name:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.last_name }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_cuit">Cuit:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.cuit }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_phone_number">Phone Number:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.phone_number }} </td>
+                </tr>
+                <tr>
+                    <td><div class="validation_input" id="message_validate_phone_number"></div></td>
                 </tr>
                 <tr>
                     <td><button id="next1">Next Step</button></td>
@@ -45,31 +46,31 @@
 
         <!-- Step 2 -->
         <div class="step" id="step2">
-            <h2>Account Data</h2>
+            <h1 class="title">Account Data</h1>
             <table>
-                <tr>
-                    <td><label for="id_email">Email:</label></td>
-                </tr>
                 <tr>
                     <td> {{ form.email }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_username">Username:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.username }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_password">Password:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.password }} </td>
                 </tr>
                 <tr>
-                    <td><label for="id_repeat_password">Repeat Password:</label></td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.repeat_password }} </td>
+                </tr>
+                <tr>
+                    <td><div class="validation_input" id="message_validate_repeat_password"></div></td>
                 </tr>
                 <tr>
                     <td><button id="prev2">Previous Step</button></td>
@@ -82,31 +83,31 @@
 
         <!-- Step 3 -->
         <div class="step" id="step3">
-            <h2>Interest Data</h2>
+            <h1 class="title">Service Data</h1>
             <table>
                 <tr>
-                    <td><label for="id_work_line">Work Line</label></td>
+                    <td><div class="user">Seller?</div> {{ form.is_seller }} </td>
                 </tr>
                 <tr>
-                    <td> {{ form.work_line }} </td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
-                    <td><label for="id_interest_line">Interest Line</label></td>
+                    <td><div class="user">Work Line</div> {{ form.work_line }} </td>
                 </tr>
                 <tr>
-                    <td> {{ form.interest_line }} </td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
-                    <td><label for="id_is_seller">Seller?</label></td>
+                    <td><div class="user">Buyer?</div> {{ form.is_buyer }} </td>
                 </tr>
                 <tr>
-                    <td> {{ form.is_seller }} </td>
+                    <td><div class="validation_input"></div></td>
                 </tr>
                 <tr>
-                    <td><label for="id_is_buyer">Buyer?</label></td>
+                    <td><div class="user">Interest Line</div> {{ form.interest_line }} </td>
                 </tr>
                 <tr>
-                    <td> {{ form.is_buyer }} </td>
+                    <td><div class="validation_input" id="message_validate_interest_line"></div></td>
                 </tr>
                 <tr>
                     <td><button id="prev3">Previous Step</button></td>
@@ -117,6 +118,6 @@
             </table>
         </div>
     </form>
-    {% endblock %}
 </body>
 </html>
+{% endblock %}
