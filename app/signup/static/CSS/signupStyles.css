@@ -1,31 +1,111 @@
+/* ELEMENT */
 body {
-    font-family: Arial, sans-serif;
-/*     display: flex;
-    justify-content: center; */
-
-}
-
-.step {
-    padding: 20px;
-    position: absolute;
-    /* text-align: center; */
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    border: 2px solid black;
-    border-radius: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('SignUpBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 button {
-    padding: 10px;
-    width: 395px;
-    border-radius: 10px;
+    margin-left: 30px;
+    padding: 14px;
+    width: 405px;
+    color: white;
+    border: 0px;
+    border-radius: 25px;
+    background-image: url('BackgroundBlueEscale.jpg');
+    background-size: cover;
+    font-size: 20px;
 }
 
 input {
-    padding: 7.5px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    padding: 12px;
+    width: 325;
+    border: 0px;
+    border-bottom: 2px solid rgb(208, 207, 207);
+    border-bottom-width: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input[type="checkbox"] {
+    margin-top: 5.5px;
+    width: 40px;
+    block-size: 41px;
+}
+
+select {
+    margin-top: 5.5px;
+    margin-left: 30px;
+    width: 100px;
+    block-size: 41px;
+    font-size: 17.5px;
+}
+
+td {
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CLASS */
+.step {
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 510px;
+    height: 695px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50px;
+    border-top-right-radius: 300px;
+}
+
+.title {
+    margin-top: 15px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    color: transparent;
+    background-image: url('BackgroundBlueEscale.jpg');
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 40px;
+}
+
+.user {
+    font-size: 22.5px;
+    color: rgb(120, 120, 120);
+}
+
+.validation_input {
+    margin-left: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+    width: 345;
+    height: 30px;
+/*     border: 1px solid black;
+ */}
+
+/* ID */
+#message_validate_phone_number {
+    margin-bottom: 88px;
+}
+
+#message_validate_repeat_password {
+    margin-bottom: 13.2px;
+}
+
+#message_validate_interest_line {
+    margin-bottom: 20.5px;
+}
+
+#prev2,
+#prev3 {
+    margin-bottom: 20px;
 }
