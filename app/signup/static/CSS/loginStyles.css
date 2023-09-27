@@ -1,21 +1,10 @@
+/* ELEMENT */
 body {
-    font-family: Arial, sans-serif;
-/*     display: flex;
-    justify-content: center; */
-
-}
-
-.display {
-    padding: 20px;
-    position: absolute;
-    /* text-align: center; */
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    border: 2px solid black;
-    border-radius: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('../IMG/LoginBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 button {
@@ -29,3 +18,18 @@ input {
     margin-bottom: 15px;
     border-radius: 10px;
 }
+
+/* CLASS */
+.display {
+    padding: 20px;
+    position: absolute;
+    /* text-align: center; */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
