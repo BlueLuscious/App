@@ -2,14 +2,16 @@ from django import forms
 from client.models import ClientModel
 
 class SignUpForm(forms.ModelForm):
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
-    cuit = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Cuit'}))
-    phone_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Phone Number'}))
-    email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
-    repeat_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Repeat Password'}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'First Name'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Last Name'}))
+    cuit = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Cuit'}))
+    phone_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Phone Number'}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Password'}))
+    repeat_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Repeat Password'}))
+    is_seller = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'input'}), required=False, initial=False)
+    is_buyer = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'input'}), required=False, initial=True)
 
     class Meta:
         model = ClientModel
