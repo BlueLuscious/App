@@ -4,10 +4,15 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{% static 'CSS/signupStyles.css' %}" type="text/css"/>
-    <script src="{% static 'JS/signupScript.js' %}"></script>
+    <script type="module" src="{% static 'JS/signupScript.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
+    <div class="go_login_button">
+        <button type="button" id="go_to_login"><div id="arrowLeft" class="bi bi-arrow-left-square-fill"></div></button>
+        <div class="go_login_popup_text" id="go_login_popup">Go to Login</div>
+    </div>
     <form method="post" enctype="multipart/form-data" id="form">
         {% csrf_token %}
         <!-- Step 1 -->
@@ -18,28 +23,28 @@
                     <td> {{ form.first_name }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_first_name"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.last_name }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_last_name"></div></td>
                 </tr>
                 <tr>
-                    <td> {{ form.cuit }} </td>
+                    <td> {{ form.cuit }}  </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_cuit"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.phone_number }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input" id="message_validate_phone_number"></div></td>
+                    <td><div class="warning" id="warning_phone_number"></div></td>
                 </tr>
                 <tr>
-                    <td><button id="next1">Next Step</button></td>
+                    <td><button id="next1" class="buttonStep">Next Step</button></td>
                 </tr>
             </table>
         </div>
@@ -52,31 +57,31 @@
                     <td> {{ form.email }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_email"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.username }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_username"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.password }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_password"></div></td>
                 </tr>
                 <tr>
                     <td> {{ form.repeat_password }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input" id="message_validate_repeat_password"></div></td>
+                    <td><div class="warning" id="warning_repeat_password"></div></td>
                 </tr>
                 <tr>
-                    <td><button id="prev2">Previous Step</button></td>
+                    <td><button id="prev2" class="buttonStep">Previous Step</button></td>
                 </tr>
                 <tr>
-                    <td><button type="button" id="next2">Next Step</button></td>
+                    <td><button type="button" id="next2" class="buttonStep">Next Step</button></td>
                 </tr>
             </table>
         </div>
@@ -89,31 +94,31 @@
                     <td><div class="user">Seller?</div> {{ form.is_seller }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_is_seller"></div></td>
                 </tr>
                 <tr>
                     <td><div class="user">Work Line</div> {{ form.work_line }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_work_line"></div></td>
                 </tr>
                 <tr>
                     <td><div class="user">Buyer?</div> {{ form.is_buyer }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input"></div></td>
+                    <td><div class="warning" id="warning_is_buyer"></div></td>
                 </tr>
                 <tr>
                     <td><div class="user">Interest Line</div> {{ form.interest_line }} </td>
                 </tr>
                 <tr>
-                    <td><div class="validation_input" id="message_validate_interest_line"></div></td>
+                    <td><div class="warning" id="warning_interest_line"></div></td>
                 </tr>
                 <tr>
-                    <td><button id="prev3">Previous Step</button></td>
+                    <td><button id="prev3" class="buttonStep">Previous Step</button></td>
                 </tr>
                 <tr>
-                    <td><button type="submit">Sign Up</button></td>
+                    <td><button type="submit" class="buttonStep">Sign Up</button></td>
                 </tr>
             </table>
         </div>
