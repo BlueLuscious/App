@@ -3,10 +3,12 @@ from django.shortcuts import redirect
 from django.views import View
 from django.template import loader
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
+template = loader.get_template('registration/login.html')
 
 class LogInView(View):
     def get(self, request):
-        template = loader.get_template('registration/login.html')
         return HttpResponse(template.render(None, request))
     
     def post(self, request):
@@ -17,4 +19,8 @@ class LogInView(View):
             login(request, user)
             return redirect('/home/')
         else:
-            return redirect('/login/')
+            context = {
+                'border_color': 'rgb(180, 20, 60)'
+            }
+            messages.error(request, 'The user is not registered or the user data is invalid')
+            return HttpResponse(template.render(context, request))
