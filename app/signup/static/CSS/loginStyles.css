@@ -8,28 +8,120 @@ body {
 }
 
 button {
-    padding: 10px;
-    width: 395px;
-    border-radius: 10px;
+    margin-left: 30px;
+    padding: 14px;
+    width: 405px;
+    color: white;
+    border: 0px;
+    border-radius: 25px;
+    background-image: url('../IMG/BackgroundGreen-BlueEscale.jpg');
+    background-size: cover;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    animation: blink-hover 1s infinite;
+}
+@keyframes blink-hover {
+    0% {opacity: 0.7;}
+    50% {opacity: 0.7;}
+    100% {opacity: 0.7;}
 }
 
 input {
-    padding: 7.5px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    margin-left: 35px;
+    margin-top: 15px;
+    padding: 12px;
+    width: 325;
+    border: none;
+    border-bottom: 2px solid rgb(208, 207, 207);
+    border-bottom-width: 5px;
+    border-radius: 5px;
+    outline-color: transparent;
+    font-size: 15px;
+}
+
+input:hover {
+    border-color: rgb(124, 124, 124);
+}
+
+td {
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CLASS */
-.display {
+.login_form {
     padding: 20px;
     position: absolute;
-    /* text-align: center; */
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 600px;
+    width: 510px;
+    height: 695px;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
-    border-radius: 30px;
+    background-color: white;
+    border-radius: 50px;
+    border-top-right-radius: 300px;
 }
 
+.title {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 45px;
+    padding-left: 30px;
+    color: transparent;
+    background-image: url('../IMG/BackgroundGreen-BlueEscale.jpg');
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 40px;
+}
+
+.warning {
+    margin-left: 35px;
+    padding-top: 10px;
+    width: 400;
+    height: 30px;
+    text-align: center;
+    color: rgb(195, 20, 20);
+}
+
+/* ID */
+#warning_userdata {
+    margin-bottom: 82px;
+}
+
+#go_to_signup {
+    margin-bottom: 20px;
+    background-image: url('../IMG/BackgroundBlack-White-01.jpg');
+    background-size: cover;
+}
+
+#show_password_button {
+    margin: 0px;
+    padding: 0px;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 47.7%;
+    left: 82.5%;
+}
+
+#show_password_popup {
+    margin: 0px;
+    padding: 15px;
+    width: 125px;
+    position: absolute;
+    top: 46.2%;
+    left: 91%;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size: 18px;
+}
