@@ -47,9 +47,8 @@ window.addEventListener("DOMContentLoaded", function () {
                     warnings[6].innerHTML = ''
                 } else if (index == 7) {
                     warnings[7].innerHTML = ''
-                } else if (index == 8) {
+                } else if (index == 8 || index == 9) {
                     warnings[8].innerHTML = ''
-                } else if (index == 9) {
                     warnings[10].innerHTML = ''
                 }
             }
