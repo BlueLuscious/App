@@ -7,14 +7,14 @@
     <script type="module" src="{% static 'JS/signupScript.js' %}"></script>
 </head>
 <body>
-    <div class="go_login_button">
-        <button type="button" id="go_to_login"><div id="arrowLeft" class="bi bi-arrow-left-square-fill"></div></button>
-        <div class="go_login_popup_text" id="go_login_popup">Go to Login</div>
-    </div>
     <form method="post" enctype="multipart/form-data" id="form">
         {% csrf_token %}
         <!-- Step 1 -->
         <div class="step" id="step1">
+            <div class="go_login_button">
+                <button type="button" id="go_to_login"><div id="arrowLeft" class="bi bi-arrow-left-square-fill"></div></button>
+                <div class="go_login_popup_text" id="go_login_popup">Go to Login</div>
+            </div>
             <h1 class="title">Personal Data</h1>
             <table>
                 <tr>
