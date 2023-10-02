@@ -29,5 +29,4 @@ class SignUpView(View):
         }
 
         ClientModel.objects.create_user(**data)
-        template = loader.get_template("registration/login.html")
-        return HttpResponse(template.render(data, request))
+        return redirect('/login/')
