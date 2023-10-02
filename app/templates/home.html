@@ -1,8 +1,10 @@
+{% extends "base.html" %}
 {% block content %}
-  {{ stock.name }}
-  {% for s in stock %}
-    {{ s.name }} ---- {{ s.seller.username }}
-    ${{ s.price }}
-    <br>
-  {% endfor %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'CSS/homeStyles.css' %}" type="text/css">
+</head>
+<body>
+
+</body> 
 {% endblock content %}

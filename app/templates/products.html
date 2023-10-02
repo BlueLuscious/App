@@ -1,0 +1,36 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'CSS/productsStyles.css' %}" type="text/css">
+</head>
+<body>
+  <h1 class="title">Products about your interest!</h1>
+  <div class="display_products">
+    {% for s in stock %}
+    <div class="card_product">
+      <table>
+        <tr>
+          <td>
+            {% if s.image  %}
+            <img src="{{ s.image.url }}" alt="gold-ring" width="200px" height="200px">
+            {% else %}
+            <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" width="200px" height="200px">
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>Name product: {{ s.name }}</td>
+        </tr>
+        <tr>
+          <td>Seller: {{ s.seller.username }}</td>
+        </tr>
+        <tr>
+          <td>Price: ${{ s.price }}</td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+</body> 
+{% endblock content %}
