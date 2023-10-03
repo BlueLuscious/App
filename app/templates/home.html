@@ -1,10 +1,30 @@
 {% extends "base.html" %}
-{% block content %}
 {% load static %}
+{% block content %}
 <head>
   <link rel="stylesheet" href="{% static 'CSS/homeStyles.css' %}" type="text/css">
+  <script src="{% static 'JS/homeScript.js' %}"></script>
 </head>
 <body>
+  <div class="navbar">
+    {% if userdata.avatar %}
+    <img src="{{ userdata.avatar.url }}" alt="user-avatar" width="75px" height="75px">
+    {% else %}
+    <img src="{% static 'IMG/default-profile.jpg' %}" alt="default-avatar" width="75px" height="75px">
+    {% endif %}
+    <button class="navbar_button">
+      <i class="bi bi-house"></i>
+      <i class="bi bi-house-fill"></i>
+    </button>
+    <button class="navbar_button">
+      <i class="bi bi-cart"></i>
+      <i class="bi bi-cart-fill"></i>
+    </button>
+    <button class="navbar_button">
 
+    </button>
+
+
+  </div>
 </body> 
 {% endblock content %}
