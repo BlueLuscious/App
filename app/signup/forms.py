@@ -15,5 +15,5 @@ class SignUpForm(forms.ModelForm):
 
     class Meta:
         model = ClientModel
-        fields = ['first_name', 'last_name', 'cuit', 'phone_number', 'email', 'username', 'password', 'repeat_password', 'is_seller', 'work_line', 'is_buyer', 'interest_line', 'state', 'city', 'postal_code']
+        fields = ['first_name', 'last_name', 'cuit', 'phone_number', 'email', 'username', 'password', 'repeat_password', 'is_seller', 'work_line', 'is_buyer', 'interest_line', 'state', 'city', 'postal_code', 'avatar']
         
