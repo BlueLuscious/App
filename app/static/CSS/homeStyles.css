@@ -1,4 +1,24 @@
 /* ELEMENT */
 body {
+    margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+    margin: 10%;
+    border: 1px solid skyblue;
+    border-radius: 50%;
+}
+
+
+/* CLASS */
+.navbar {
+    width: 10vh;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.navbar_button {
+    margin: 20%;
+    padding: 10%;
 }

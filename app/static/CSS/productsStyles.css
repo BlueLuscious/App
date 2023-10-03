@@ -23,6 +23,8 @@ img {
 
 /* CLASS */
 .display_products {
+/*     display: block;
+    justify-content: center; */
     width: 61.5%;
     border: 1px solid;
     transform: translate(31%, 25%);
