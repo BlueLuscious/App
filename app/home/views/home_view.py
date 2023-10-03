@@ -9,10 +9,10 @@ class HomeView(LoginRequiredMixin, View):
     def get(self, request):
         template = loader.get_template('home.html')
         stock_by_interest_line = StockModel.objects.filter(type_work_line=request.user.interest_line).exclude(seller=request.user)
-        userdata_all = ClientModel.objects.all()
+        userdata = ClientModel.objects.get(id=request.user.id)
         context = {
             "stock": stock_by_interest_line,
-            "userdata": userdata_all,
+            "userdata": userdata,
         }
         return HttpResponse(template.render(context, request))
     
