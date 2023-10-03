@@ -21,3 +21,6 @@ Proyect commands
 Create requirements
     # pip install package-name (once)
     # pip freeze > requirements.txt
+
+Define the environment variable 
+    # set DJANGO_SETTINGS_MODULE=myproject.settings 
