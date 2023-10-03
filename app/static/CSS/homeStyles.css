@@ -6,19 +6,24 @@ body {
 
 img {
     margin: 10%;
+    margin-bottom: 75%;
     border: 1px solid skyblue;
     border-radius: 50%;
 }
 
 
 /* CLASS */
-.navbar {
+.left_side_navbar {
+    position: fixed;
     width: 10vh;
     height: 100vh;
     border: 1px solid black;
 }
 
-.navbar_button {
-    margin: 20%;
-    padding: 10%;
+.left_side_navbar_button {
+    margin: 17%;
+    margin-bottom: 20%;
+    padding: 15%;
+    border-radius: 50%;
+    font-size: 200%;
 }
