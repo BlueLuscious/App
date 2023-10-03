@@ -1,6 +1,7 @@
 {% extends "home.html" %}
-{% load static %}
 {% block content %}
+{% comment %} {{ block.super }} CHEQUEAR BIEN SU USO {% endcomment %}
+{% load static %}
 <head>
   <link rel="stylesheet" href="{% static 'CSS/productsStyles.css' %}" type="text/css">
 </head>
@@ -12,7 +13,7 @@
       <table>
         <tr>
           <td>
-            {% if s.image  %}
+            {% if s.image %}
             <img src="{{ s.image.url }}" alt="gold-ring" width="200px" height="200px">
             {% else %}
             <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" width="200px" height="200px">
@@ -32,5 +33,5 @@
     </div>
     {% endfor %}
   </div>
-</body> 
+</body>
 {% endblock content %}
