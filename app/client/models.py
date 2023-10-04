@@ -7,7 +7,7 @@ class WorkLineChoices(models.TextChoices):
     OTHERS = "Others"
 
 class ClientModel(AbstractUser):
-    cuit = models.CharField(max_length=11)
+    cuit = models.CharField(max_length=13)
     work_line = models.CharField(choices=WorkLineChoices.choices, max_length=128, default=WorkLineChoices.OTHERS.value)
     interest_line = models.CharField(choices=WorkLineChoices.choices, max_length=128, default=WorkLineChoices.OTHERS.value)
     is_seller = models.BooleanField(default=False)
@@ -19,4 +19,4 @@ class ClientModel(AbstractUser):
     avatar = models.ImageField(upload_to="avatar", default=None, null=True, blank=True)
     
     def __str__(self) -> str:
-        return f"First name: {self.first_name}, Last name: {self.last_name}"
+        return f"Username: {self.username} | Work Line: {self.work_line}"
