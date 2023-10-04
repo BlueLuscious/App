@@ -8,9 +8,9 @@ class StockModel(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     quantity = models.FloatField(max_length=128, default=1)
     image = models.ImageField(upload_to="products", default=None, null=True, blank=True)
-    description = models.TextField(max_length=256)
-    code = models.CharField(max_length=12, unique=True)
-    expiration = models.DateTimeField(null=True, default=None)    
+    description = models.TextField(max_length=256, blank=True)
+    code = models.CharField(max_length=12, unique=False)
+    expiration = models.DateTimeField(null=True, default=None)
 
     class Meta:
         unique_together = ("seller", "code")
