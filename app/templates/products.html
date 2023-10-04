@@ -1,6 +1,10 @@
 {% extends "home.html" %}
+
 {% block content %}
-{% comment %} {{ block.super }} CHEQUEAR BIEN SU USO {% endcomment %}
+{{block.super}}
+{% endblock content %}
+
+{% block home %}
 {% load static %}
 <head>
   <link rel="stylesheet" href="{% static 'CSS/productsStyles.css' %}" type="text/css">
@@ -14,9 +18,9 @@
         <tr>
           <td>
             {% if s.image %}
-            <img src="{{ s.image.url }}" alt="gold-ring" width="200px" height="200px">
+            <img src="{{ s.image.url }}" alt="gold-ring" class="card_product_img">
             {% else %}
-            <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" width="200px" height="200px">
+            <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
             {% endif %}
           </td>
         </tr>
@@ -34,4 +38,4 @@
     {% endfor %}
   </div>
 </body>
-{% endblock content %}
+{% endblock home %}

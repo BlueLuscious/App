@@ -8,21 +8,53 @@
 <body>
   <div class="left_side_navbar">
     {% if userdata.avatar %}
-    <img src="{{ userdata.avatar.url }}" alt="user-avatar" width="75px" height="75px">
+    <img src="{{ userdata.avatar.url }}" alt="user-avatar" class="left_side_navbar_img">
     {% else %}
-    <img src="{% static 'IMG/default-profile.jpg' %}" alt="default-avatar" width="75px" height="75px">
+    <img src="{% static 'IMG/default-profile.jpg' %}" alt="default-avatar" class="left_side_navbar_img">
     {% endif %}
     <button class="left_side_navbar_button">
       <i class="bi bi-house"></i>
-{% comment %}       <i class="bi bi-house-fill"></i> {% endcomment %}
+{% comment %}
+      <i class="bi bi-house-fill"></i>
+{% endcomment %}
     </button>
     <button class="left_side_navbar_button">
       <i class="bi bi-cart"></i>
-{% comment %}       <i class="bi bi-cart-fill"></i> {% endcomment %}
+{% comment %}
+      <i class="bi bi-cart-fill"></i>
+
+      to products:
+      <i class="bi bi-cart-dash"></i>
+      <i class="bi bi-cart-dash-fill"></i>
+      <i class="bi bi-cart-plus"></i>
+      <i class="bi bi-cart-plus-fill"></i>
+{% endcomment %}
     </button>
     <button class="left_side_navbar_button">
+      <i class="bi bi-box2"></i>
+{% comment %}
+      <i class="bi bi-box2-fill"></i>
+{% endcomment %}
+    </button>
+    <button class="left_side_navbar_button">
+      <i class="bi bi-chat"></i>
+    </button>
+    <button class="left_side_navbar_button">
+      <i class="bi bi-bookmark"></i>
+{% comment %}
+      <i class="bi bi-bookmark-fill"></i>
 
+      to cartpage: use fill o not fill on both
+      <i class="bi bi-bookmark-dash"></i>
+      <i class="bi bi-bookmark-dash-fill"></i>
+      <i class="bi bi-bookmark-plus"></i>
+      <i class="bi bi-bookmark-plus-fill"></i>
+{% endcomment %}
     </button>
   </div>
 </body>
 {% endblock content %}
+
+{% block home %}
+
+{% endblock home %}
