@@ -1,5 +1,6 @@
 /* ELEMENT */
 body {
+    margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -16,15 +17,8 @@ td {
     text-align: center;
 }
 
-img {
-    border: 2px solid;
-    border-radius: 20px;
-}
-
 /* CLASS */
 .display_products {
-/*     display: block;
-    justify-content: center; */
     width: 61.5%;
     border: 1px solid;
     transform: translate(31%, 25%);
@@ -33,6 +27,13 @@ img {
 .card_product {
     display: inline-flex;
     padding: 2%;
+}
+
+.card_product_img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid;
+    border-radius: 20px;
 }
 
 .title {
