@@ -8,15 +8,19 @@
 <body>
   <div class="left_side_navbar">
     {% if userdata.avatar %}
-    <img src="{{ userdata.avatar.url }}" alt="user-avatar" class="left_side_navbar_img">
+    <a href="/home/profile/">
+      <img src="{{ userdata.avatar.url }}" alt="user-avatar" class="left_side_navbar_img">
+    </a>
     {% else %}
-    <img src="{% static 'IMG/default-profile.jpg' %}" alt="default-avatar" class="left_side_navbar_img">
+    <a href="/home/profile/">
+      <img src="{% static 'IMG/default-profile.jpg' %}" alt="default-avatar" class="left_side_navbar_img">
+    </a>
     {% endif %}
     <button class="left_side_navbar_button">
-      <i class="bi bi-house"></i>
-{% comment %}
-      <i class="bi bi-house-fill"></i>
-{% endcomment %}
+      <i class="bi bi-house-fill icon_home"></i>
+    </button>
+    <button class="left_side_navbar_button">
+      <i class="bi bi-box2 icon_products"></i>
     </button>
     <button class="left_side_navbar_button">
       <i class="bi bi-cart"></i>
@@ -28,12 +32,6 @@
       <i class="bi bi-cart-dash-fill"></i>
       <i class="bi bi-cart-plus"></i>
       <i class="bi bi-cart-plus-fill"></i>
-{% endcomment %}
-    </button>
-    <button class="left_side_navbar_button">
-      <i class="bi bi-box2"></i>
-{% comment %}
-      <i class="bi bi-box2-fill"></i>
 {% endcomment %}
     </button>
     <button class="left_side_navbar_button">
@@ -52,9 +50,53 @@
 {% endcomment %}
     </button>
   </div>
+  <div class="popup_text_table">
+    <div class="popup_text" id="profile_popup">Profile</div>
+    <div class="popup_text" id="home_popup">Home</div>
+    <div class="popup_text" id="products_popup">Products</div>
+    <div class="popup_text" id="cart_popup">Shopping Cart</div>
+    <div class="popup_text" id="favs_popup">Messages</div>
+    <div class="popup_text" id="favs_popup">Favourites</div>
+  </div>
 </body>
 {% endblock content %}
 
 {% block home %}
-
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'CSS/homeStyles.css' %}" type="text/css">
+  <script src="{% static 'JS/homeScript.js' %}"></script>
+</head>
+<body>
+  <div class="greet_and_meet">
+    <h1>Welcome <div class="say_hello">{{ userdata.first_name }}</div>!</h1>
+    <input type="text" id="search_bar" placeholder="What do you wish to search?">
+  </div>
+  <div class="display_products">
+    {% for s in stock %}
+    <div class="card_product">
+      <table class="card_product_table">
+        <tr>
+          <td>
+            {% if s.image %}
+            <img src="{{ s.image.url }}" alt="gold-ring" class="card_product_img">
+            {% else %}
+            <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>{{ s.name }}</td>
+        </tr>
+        <tr>
+          <td>By {{ s.seller.username }}</td>
+        </tr>
+        <tr>
+          <td>${{ s.price }}</td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+</body>
 {% endblock home %}
