@@ -79,6 +79,13 @@ window.addEventListener('DOMContentLoaded', function () {
     })
     /* END - NAVBAR BUTTONS */
 
+    /* BEGIN - CHANGE ICON ACCORDING TO PATHNAME */
+    if (window.location.pathname === '/home/products/') {
+        $('.icon_home').removeClass('bi bi-house-fill').addClass('bi bi-house')
+        $('.icon_products').removeClass('bi bi-box2').addClass('bi bi-box2-fill')
+    }
+    /* END - CHANGE ICON ACCORDING TO PATHNAME */
+
     /* BEGIN - SEARCH BAR */
     const searchBar = document.getElementById('search_bar')
 
@@ -90,13 +97,5 @@ window.addEventListener('DOMContentLoaded', function () {
         this.style.borderBottomColor = ''
     })
     /* END - SEARCH BAR */
-
-
-    /* BEGIN - CHANGE ICON ACCORDING TO PATHNAME */
-    if (window.location.pathname === '/home/products/') {
-        $('.icon_home').removeClass('bi bi-house-fill').addClass('bi bi-house')
-        $('.icon_products').removeClass('bi bi-box2').addClass('bi bi-box2-fill')
-    }
-    /* END - CHANGE ICON ACCORDING TO PATHNAME */
 
 })
