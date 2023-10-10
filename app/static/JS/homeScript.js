@@ -84,6 +84,10 @@ window.addEventListener('DOMContentLoaded', function () {
         $('.icon_home').removeClass('bi bi-house-fill').addClass('bi bi-house')
         $('.icon_products').removeClass('bi bi-box2').addClass('bi bi-box2-fill')
     }
+    if (window.location.pathname === '/home/cart/') {
+        $('.icon_home').removeClass('bi bi-house-fill').addClass('bi bi-house')
+        $('.icon_cart').removeClass('bi bi-cart').addClass('bi bi-cart-fill')
+    }
     /* END - CHANGE ICON ACCORDING TO PATHNAME */
 
     /* BEGIN - SEARCH BAR */
