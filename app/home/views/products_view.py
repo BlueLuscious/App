@@ -8,10 +8,10 @@ from client.models import ClientModel
 class ProductsView(LoginRequiredMixin, View):
     def get(self, request):
         template = loader.get_template('products.html')
-        stock_by_interest_line = StockModel.objects.all().exclude(seller=request.user.id)
+        all_stock = StockModel.objects.all().exclude(seller=request.user.id)
         userdata = ClientModel.objects.get(id=request.user.id)        
         context = {
-            "stock": stock_by_interest_line,
+            "all_stock": all_stock,
             "userdata": userdata,
         }
         return HttpResponse(template.render(context, request))
