@@ -183,6 +183,38 @@ td {
     height: 300px;
     border: 3px solid #02307C;
     border-radius: 20px;
+    margin-top: 5px;
+}
+
+.add_to_cart {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add_to_cart td {
+    margin: 0;
+    padding: 0;
+}
+
+.add_to_cart input {
+    width: 200px;
+    height: 35px;
+    margin-left: 20px;
+    text-align: center;
+    border-color: transparent;
+    border-bottom-color: #02193a;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.add_to_cart button {
+    height: 35px;
+    border: none;
+    border-radius: 20%;
+    color: white;
+    background-color: #02307C;
+    font-size: 25px;
 }
 
 .see_more_button {
@@ -205,5 +237,9 @@ td {
 #display_more_products {
     position: relative;
     top: 15%;
+}
+
+#form {
+    display: inline;
 }
 /* END - BLOCK HOME */
