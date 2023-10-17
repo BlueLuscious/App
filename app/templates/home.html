@@ -35,6 +35,8 @@
     <i class="bi bi-cart-dash-fill"></i>
     <i class="bi bi-cart-plus"></i>
     <i class="bi bi-cart-plus-fill"></i>
+    <i class="bi bi-cart-check"></i>
+    <i class="bi bi-cart-check-fill"></i>
 {% endcomment %}
   </button>
   <button class="left_side_navbar_button">
@@ -87,32 +89,40 @@
     <div class="title_products">
       <h1>Products according to your interest (<div class="interest_line">{{ userdata.interest_line }}</div>)</h1>
     </div>
-    {% for s in stock_interest_line %}
-      {% if forloop.counter <= 6 %}
-        <div class="card_product">
-          <table class="card_product_table">
-            <tr>
-              <td>
-                {% if s.image %}
-                <img src="{{ s.image.url }}" alt="gold-ring" class="card_product_img">
-                {% else %}
-                <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
-                {% endif %}
-              </td>
-            </tr>
-            <tr>
-              <td>{{ s.name }}</td>
-            </tr>
-            <tr>
-              <td>By {{ s.seller.username }}</td>
-            </tr>
-            <tr>
-              <td>${{ s.price }}</td>
-            </tr>
-          </table>
-        </div>
-      {% endif %}
-    {% endfor %}
+      {% for s in stock_interest_line %}
+      <form action="/home/cart/" method="post" id="form">
+        {% csrf_token %}
+        {% if forloop.counter <= 6 %}
+          <div class="card_product">
+            <table class="card_product_table">
+              <tr>
+                <td>
+                  {% if s.image %}
+                  <img src="{{ s.image.url }}" alt="gold-ring" class="card_product_img">
+                  {% else %}
+                  <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
+                  {% endif %}
+                </td>
+              </tr>
+              <tr>
+                <td>{{ s.name }}</td>
+              </tr>
+              <tr>
+                <td>By {{ s.seller.username }}</td>
+              </tr>
+              <tr>
+                <td>${{ s.price }}</td>
+              </tr>
+              <tr class="add_to_cart">
+                <td hidden><input type="text" value="{{ s.pk }}" name="id"></td>
+                <td><input type="number" value="1" name="quantity"></td>
+                <td><button type="submit"><i class="bi bi-cart-plus"></i></button></td>
+              </tr>
+            </table>
+          </div>
+        {% endif %}
+      </form>
+      {% endfor %}
     <div class="see_more_button">
       <button>See more</button>
     </div>
@@ -124,30 +134,37 @@
       <h1>More of our products</h1>
     </div>
     {% for more in more_stock %}
-      {% if forloop.counter <= 6 %}
-        <div class="card_product">
-          <table class="card_product_table">
-            <tr>
-              <td>
-                {% if more.image %}
-                <img src="{{ more.image.url }}" alt="gold-ring" class="card_product_img">
-                {% else %}
-                <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
-                {% endif %}
-              </td>
-            </tr>
-            <tr>
-              <td>{{ more.name }}</td>
-            </tr>
-            <tr>
-              <td>By {{ more.seller.username }}</td>
-            </tr>
-            <tr>
-              <td>${{ more.price }}</td>
-            </tr>
-          </table>
-        </div>
-      {% endif %}
+      <form action="/home/cart/" method="post" id="form">
+        {% csrf_token %}
+        {% if forloop.counter <= 6 %}
+          <div class="card_product">
+            <table class="card_product_table">
+              <tr>
+                <td>
+                  {% if more.image %}
+                  <img src="{{ more.image.url }}" alt="gold-ring" class="card_product_img">
+                  {% else %}
+                  <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
+                  {% endif %}
+                </td>
+              </tr>
+              <tr>
+                <td>{{ more.name }}</td>
+              </tr>
+              <tr>
+                <td>By {{ more.seller.username }}</td>
+              </tr>
+              <tr>
+                <td>${{ more.price }}</td>
+              </tr>
+              <tr class="add_to_cart">
+                <td><input type="number" value="1" name="quantity"></td>
+                <td><button type="submit"><i class="bi bi-cart-plus"></i></button></td>
+              </tr>
+            </table>
+          </div>
+        {% endif %}
+      </form>
     {% endfor %}
     <div class="see_more_button">
       <button>See more</button>
@@ -161,30 +178,37 @@
       <h1>See all our products</h1>
     </div>
     {% for more in more_stock %}
-      {% if forloop.counter <= 12 %}
-        <div class="card_product">
-          <table class="card_product_table">
-            <tr>
-              <td>
-                {% if more.image %}
-                <img src="{{ more.image.url }}" alt="gold-ring" class="card_product_img">
-                {% else %}
-                <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
-                {% endif %}
-              </td>
-            </tr>
-            <tr>
-              <td>{{ more.name }}</td>
-            </tr>
-            <tr>
-              <td>By {{ more.seller.username }}</td>
-            </tr>
-            <tr>
-              <td>${{ more.price }}</td>
-            </tr>
-          </table>
-        </div>
-      {% endif %}
+      <form action="/home/cart/" method="post" id="form">
+        {% csrf_token %}
+        {% if forloop.counter <= 12 %}
+          <div class="card_product">
+            <table class="card_product_table">
+              <tr>
+                <td>
+                  {% if more.image %}
+                  <img src="{{ more.image.url }}" alt="gold-ring" class="card_product_img">
+                  {% else %}
+                  <img src="{% static 'IMG/default-no-image.png' %}" alt="default-no-image" class="card_product_img">
+                  {% endif %}
+                </td>
+              </tr>
+              <tr>
+                <td>{{ more.name }}</td>
+              </tr>
+              <tr>
+                <td>By {{ more.seller.username }}</td>
+              </tr>
+              <tr>
+                <td>${{ more.price }}</td>
+              </tr>
+              <tr class="add_to_cart">
+                <td><input type="number" value="1" name="quantity"></td>
+                <td><button type="submit"><i class="bi bi-cart-plus"></i></button></td>
+              </tr>
+            </table>
+          </div>
+        {% endif %}
+      </form>
     {% endfor %}
     <div class="see_more_button">
       <button>See more</button>
