@@ -6,7 +6,7 @@ class StockModel(models.Model):
     type_work_line = models.CharField(choices=WorkLineChoices.choices, max_length=128, default=WorkLineChoices.OTHERS.value)
     name = models.CharField(max_length=128)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    quantity = models.FloatField(max_length=128, default=1)
+    quantity = models.FloatField(max_length=128)
     image = models.ImageField(upload_to="products", default=None, null=True, blank=True)
     description = models.TextField(max_length=256, blank=True)
     code = models.CharField(max_length=12, unique=False)
