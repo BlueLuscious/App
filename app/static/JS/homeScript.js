@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', function () {
     /* BEGIN - PROFILE IMAGE */
     const profileImage = Array.from(document.getElementsByClassName('left_side_navbar_img'))
 
-    /* POPUP TEXT VISIBILITY */
     profileImage.forEach(function(image) {
+        /* POPUP TEXT VISIBILITY */
         image.addEventListener('mouseover', function () {
             popupsText[0].style.visibility = 'visible'
             popupsText[0].style.opacity = 1
@@ -79,6 +79,31 @@ window.addEventListener('DOMContentLoaded', function () {
     })
     /* END - NAVBAR BUTTONS */
 
+    /* BEGIN - INPUTS */
+    const quantity = Array.from(document.getElementsByClassName('product_quantity'))
+
+    quantity.forEach(function (input, index) {
+        /* QUANTITY --> PRODUCTS */
+        input.addEventListener('click', function () {
+            if (index >= 0) {
+                this.value = ''
+            }
+        })
+
+        input.addEventListener('focus', function () {
+            if (index >= 0) {
+                this.style.borderBottomColor = '02307C'
+            }
+        })
+
+        input.addEventListener('blur', function () {
+            if (index >= 0) {
+                this.style.borderBottomColor = ''
+            }
+        })
+    })
+    /* END - INPUTS */
+
     /* BEGIN - CHANGE ICON ACCORDING TO PATHNAME */
     if (window.location.pathname === '/home/products/') {
         $('.icon_home').removeClass('bi bi-house-fill').addClass('bi bi-house')
@@ -93,6 +118,10 @@ window.addEventListener('DOMContentLoaded', function () {
     /* BEGIN - SEARCH BAR */
     const searchBar = document.getElementById('search_bar')
 
+    searchBar.addEventListener('click', function () {
+        this.value = ''
+    })
+
     searchBar.addEventListener('focus', function () {
         this.style.borderBottomColor = '02307C'
     })
@@ -101,5 +130,4 @@ window.addEventListener('DOMContentLoaded', function () {
         this.style.borderBottomColor = ''
     })
     /* END - SEARCH BAR */
-
 })

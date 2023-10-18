@@ -30,13 +30,13 @@ button:hover {
 .left_side_navbar_profile {
     max-width: 100%;
     justify-content: center;
+    margin: 11%;
+    margin-top: 35%;
 }
 
 .left_side_navbar_img {
     width: 75px;
     height: 75px;
-    margin: 11%;
-    margin-top: 35%;
     border: 3px solid white;
     border-radius: 50%;
 }
@@ -202,10 +202,16 @@ td {
     height: 35px;
     margin-left: 20px;
     text-align: center;
-    border-color: transparent;
-    border-bottom-color: #02193a;
+    border: none;
+    border-bottom: 2px solid rgb(208, 207, 207);
+    border-bottom-width: 5px;
     border-radius: 10px;
+    outline-color: transparent;
     font-size: 20px;
+}
+
+.add_to_cart input:hover {
+    border-color: rgb(124, 124, 124);
 }
 
 .add_to_cart button {
