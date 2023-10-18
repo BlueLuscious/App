@@ -76,7 +76,7 @@ export class SignUpValidations {
             warnings[3].innerHTML = 'Phone number is empty'
             phoneNumberInput.style.borderBottomColor = 'rgb(180, 20, 60)'
             return false
-        }  else if (!/^\d+$/.test(phoneNumberInput.value)) {
+        } else if (!/^\d+$/.test(phoneNumberInput.value)) {
             warnings[3].innerHTML = 'Phone number must have only numbers'
             phoneNumberInput.style.borderBottomColor = 'rgb(180, 20, 60)'
             return false

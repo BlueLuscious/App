@@ -84,14 +84,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
     quantity.forEach(function (input, index) {
         /* QUANTITY --> PRODUCTS */
-        input.addEventListener('click', function () {
-            if (index >= 0) {
-                this.value = ''
-            }
-        })
-
         input.addEventListener('focus', function () {
             if (index >= 0) {
+                this.value = ''
                 this.style.borderBottomColor = '02307C'
             }
         })
