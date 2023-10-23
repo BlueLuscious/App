@@ -1,9 +1,12 @@
+import { HomeValidations } from "./homeValidations.js"
+const validator = new HomeValidations()
+
 window.addEventListener('DOMContentLoaded', function () {
 
     /* BEGIN - PROFILE IMAGE */
     const profileImage = Array.from(document.getElementsByClassName('left_side_navbar_img'))
 
-    profileImage.forEach(function(image) {
+    profileImage.forEach(function (image) {
         /* POPUP TEXT VISIBILITY */
         image.addEventListener('mouseover', function () {
             popupsText[0].style.visibility = 'visible'
@@ -88,6 +91,7 @@ window.addEventListener('DOMContentLoaded', function () {
             if (index >= 0) {
                 this.value = ''
                 this.style.borderBottomColor = '02307C'
+                warnings[index].innerHTML = ''
             }
         })
 
@@ -98,6 +102,25 @@ window.addEventListener('DOMContentLoaded', function () {
         })
     })
     /* END - INPUTS */
+
+    /* BEGIN -  FORM VALIDATION (ADD TO CART) */
+    const forms = Array.from(document.getElementsByClassName('home_form'))
+    const warnings = document.getElementsByClassName('warning')
+
+    forms.forEach(function (form, index){
+        form.addEventListener('submit', function (event) {
+
+            const quantityValue = quantity[index]
+            const validatedQuantityProduct = validator.validateQuantityProduct(quantityValue, index)
+
+            if (validatedQuantityProduct) {
+                form.submit()
+            } else {
+                event.preventDefault()
+            }
+        })
+    })
+    /* END -  FORM VALIDATION (ADD TO CART) */
 
     /* BEGIN - CHANGE ICON ACCORDING TO PATHNAME */
     if (window.location.pathname === '/home/products/') {
