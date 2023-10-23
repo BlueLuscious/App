@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'login',
     'stock',
     'home',
+    #'HomeCongif',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,11 @@ AUTH_USER_MODEL = "client.ClientModel"
 # Media files
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# tasks async
+Q_CLUSTER = {
+   'retry': 5,
+   'timeout': 4,
+   'workers': 4,
+   'orm': 'default',
+}
