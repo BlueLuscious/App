@@ -84,6 +84,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     /* BEGIN - INPUTS */
     const quantity = Array.from(document.getElementsByClassName('product_quantity'))
+    const warnings = Array.from(document.getElementsByClassName('warning'))
 
     quantity.forEach(function (input, index) {
         /* QUANTITY --> PRODUCTS */
@@ -105,7 +106,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
     /* BEGIN -  FORM VALIDATION (ADD TO CART) */
     const forms = Array.from(document.getElementsByClassName('home_form'))
-    const warnings = document.getElementsByClassName('warning')
 
     forms.forEach(function (form, index){
         form.addEventListener('submit', function (event) {

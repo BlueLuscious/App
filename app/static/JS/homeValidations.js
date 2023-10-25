@@ -1,4 +1,4 @@
-const warnings = document.getElementsByClassName('warning')
+const warnings = Array.from(document.getElementsByClassName('warning'))
 
 export class HomeValidations {
 
