@@ -90,9 +90,8 @@
       <h1>Products according to your interest (<div class="interest_line">{{ userdata.interest_line }}</div>)</h1>
     </div>
       {% for s in stock_interest_line %}
-      <form action="/home/cart/" method="post" id="form" class="home_form">
+      <form action="/home/cart/" method="post" id="form1" class="home_form">
         {% csrf_token %}
-        {% if forloop.counter <= 6 %}
           <div class="card_product">
             <table class="card_product_table">
               <tr>
@@ -120,12 +119,11 @@
               </tr>
               <tr>
                 <td>
-                  <div class="warning" id="warning_product"></div>
+                  <div class="warning"></div>
                 </td>
               </tr>
             </table>
           </div>
-        {% endif %}
       </form>
       {% endfor %}
     <div class="see_more_button">
@@ -139,9 +137,8 @@
       <h1>More of our products</h1>
     </div>
     {% for more in more_stock %}
-      <form action="/home/cart/" method="post" id="form" class="home_form">
+      <form action="/home/cart/" method="post" id="form2" class="home_form">
         {% csrf_token %}
-        {% if forloop.counter <= 6 %}
           <div class="card_product">
             <table class="card_product_table">
               <tr>
@@ -167,9 +164,13 @@
                 <td><input type="number" value="1" name="quantity" class="product_quantity"></td>
                 <td><button type="submit"><i class="bi bi-cart-plus"></i></button></td>
               </tr>
+              <tr>
+                <td>
+                  <div class="warning"></div>
+                </td>
+              </tr>
             </table>
           </div>
-        {% endif %}
       </form>
     {% endfor %}
     <div class="see_more_button">
@@ -184,9 +185,8 @@
       <h1>See all our products</h1>
     </div>
     {% for more in more_stock %}
-      <form action="/home/cart/" method="post" id="form" class="home_form">
+      <form action="/home/cart/" method="post" id="form3" class="home_form">
         {% csrf_token %}
-        {% if forloop.counter <= 12 %}
           <div class="card_product">
             <table class="card_product_table">
               <tr>
@@ -212,9 +212,13 @@
                 <td><input type="number" value="1" name="quantity" class="product_quantity"></td>
                 <td><button type="submit"><i class="bi bi-cart-plus"></i></button></td>
               </tr>
+              <tr>
+                <td>
+                  <div class="warning"></div>
+                </td>
+              </tr>
             </table>
           </div>
-        {% endif %}
       </form>
     {% endfor %}
     <div class="see_more_button">
